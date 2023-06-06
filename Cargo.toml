@@ -4,4 +4,4 @@ version = "0.23.0"
 edition = "2021"
 
 [dependencies]
-uniffi = { version = "0.23.0", features = ["cli"] }
+uniffi = { git = "https://github.com/NordSecurity/uniffi-rs.git", rev = "36de103c82d3e062ac045b13394b8ad387d23a67", features = ["cli"] }

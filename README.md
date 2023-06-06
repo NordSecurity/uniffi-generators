@@ -35,6 +35,13 @@ shows which versions of each generator are inside the docker image.
 
 | Docker image   | uniffi-rs version | uniffi-bindgen-cs version | uniffi-bindgen-go version |
 |----------------|-------------------|---------------------------|---------------------------|
-| v0.23.0-3      | v0.23.0           | v0.2.2+v0.23.0            | v0.1.0+v0.23.0            |
+| v0.23.0-3      | v0.23.0 (FORK)    | v0.2.2+v0.23.0            | v0.1.0+v0.23.0            |
 | v0.23.0-2      | v0.23.0           | v0.2.1+v0.23.0            | v0.1.0+v0.23.0            |
 | v0.23.0-1      | v0.23.0           | v0.2.1+v0.23.0            | not present               |
+
+# v0.23.0-3
+
+uniffi-rs [fork](https://github.com/NordSecurity/uniffi-rs/commit/36de103c82d3e062ac045b13394b8ad387d23a67) changelist:
+- Docstrings support. See
+[mozilla/uniffi-rs/pull/1493](https://github.com/mozilla/uniffi-rs/pull/1493) and
+[mozilla/uniffi-rs/pull/1498](https://github.com/mozilla/uniffi-rs/pull/1498).
