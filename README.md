@@ -33,15 +33,20 @@ each time one of the generators is updated e.g. because of the bug fix. The tabl
 shows which versions of each generator are inside the docker image.
 
 
-| Docker image   | uniffi-rs version | uniffi-bindgen-cs version | uniffi-bindgen-go version |
-|----------------|-------------------|---------------------------|---------------------------|
-| v0.23.0-3      | v0.23.0 (FORK)    | v0.2.2+v0.23.0            | v0.1.0+v0.23.0            |
-| v0.23.0-2      | v0.23.0           | v0.2.1+v0.23.0            | v0.1.0+v0.23.0            |
-| v0.23.0-1      | v0.23.0           | v0.2.1+v0.23.0            | not present               |
+| Docker image           | uniffi-rs version | uniffi-bindgen-cs version | uniffi-bindgen-go version |
+|------------------------|-------------------|---------------------------|---------------------------|
+| v0.23.0-4              | v0.23.0 (FORK)    | v0.2.3+v0.23.0            | v0.1.1+v0.23.0            |
+| v0.23.0-3 (DO NOT USE) | v0.23.0 (FORK)    | v0.2.2+v0.23.0            | v0.1.0+v0.23.0            |
+| v0.23.0-2 (DO NOT USE) | v0.23.0           | v0.2.1+v0.23.0            | v0.1.0+v0.23.0            |
+| v0.23.0-1              | v0.23.0           | v0.2.1+v0.23.0            | not present               |
 
-# v0.23.0-3
+# v0.23.0-4
 
 uniffi-rs [fork](https://github.com/NordSecurity/uniffi-rs/commit/36de103c82d3e062ac045b13394b8ad387d23a67) changelist:
 - Docstrings support. See
 [mozilla/uniffi-rs/pull/1493](https://github.com/mozilla/uniffi-rs/pull/1493) and
 [mozilla/uniffi-rs/pull/1498](https://github.com/mozilla/uniffi-rs/pull/1498).
+
+# v0.23.0-2, v0.23.0-3
+
+Those versions have a severe bug which make those versions unusable. Do not use.
