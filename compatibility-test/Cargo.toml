@@ -1,0 +1,19 @@
+[package]
+name = "compatibility-test"
+version = "0.22.0"
+authors = ["Firefox Sync Team <sync-team@mozilla.com>"]
+edition = "2021"
+license = "MPL-2.0"
+publish = false
+
+[lib]
+crate-type = ["lib", "staticlib", "cdylib"]
+name = "uniffi_coverall"
+
+[dependencies]
+uniffi = { version = "0.23.0" }
+once_cell = "1.12"
+thiserror = "1.0"
+
+[build-dependencies]
+uniffi = { version = "0.23.0", features = ["build"] }

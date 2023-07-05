@@ -1,0 +1,7 @@
+[package]
+name = "uniffi-bindgen"
+version = "0.23.0"
+edition = "2021"
+
+[dependencies]
+uniffi = { git = "https://github.com/NordSecurity/uniffi-rs.git", rev = "a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4", features = ["cli"] }
