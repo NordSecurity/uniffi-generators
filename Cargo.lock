@@ -611,21 +611,21 @@ dependencies = [
 [[package]]
 name = "uniffi"
 version = "0.23.0"
-source = "git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4#a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4"
+source = "git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3#8441959e02b9d78df0c3ea53202e5e0474cbfc76"
 dependencies = [
  "anyhow",
  "camino",
  "clap",
- "uniffi_bindgen 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4)",
- "uniffi_core 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4)",
- "uniffi_macros 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4)",
+ "uniffi_bindgen 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3)",
+ "uniffi_core 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3)",
+ "uniffi_macros 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3)",
 ]
 
 [[package]]
 name = "uniffi-bindgen"
 version = "0.23.0"
 dependencies = [
- "uniffi 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4)",
+ "uniffi 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3)",
 ]
 
 [[package]]
@@ -655,7 +655,7 @@ dependencies = [
 [[package]]
 name = "uniffi_bindgen"
 version = "0.23.0"
-source = "git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4#a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4"
+source = "git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3#8441959e02b9d78df0c3ea53202e5e0474cbfc76"
 dependencies = [
  "anyhow",
  "askama",
@@ -671,9 +671,9 @@ dependencies = [
  "serde_json",
  "textwrap",
  "toml",
- "uniffi_meta 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4)",
- "uniffi_testing 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4)",
- "weedle2 4.0.0 (git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4)",
+ "uniffi_meta 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3)",
+ "uniffi_testing 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3)",
+ "weedle2 4.0.0 (git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3)",
 ]
 
 [[package]]
@@ -690,11 +690,11 @@ dependencies = [
 [[package]]
 name = "uniffi_build"
 version = "0.23.0"
-source = "git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4#a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4"
+source = "git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3#8441959e02b9d78df0c3ea53202e5e0474cbfc76"
 dependencies = [
  "anyhow",
  "camino",
- "uniffi_bindgen 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4)",
+ "uniffi_bindgen 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3)",
 ]
 
 [[package]]
@@ -710,7 +710,7 @@ dependencies = [
 [[package]]
 name = "uniffi_checksum_derive"
 version = "0.23.0"
-source = "git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4#a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4"
+source = "git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3#8441959e02b9d78df0c3ea53202e5e0474cbfc76"
 dependencies = [
  "quote",
  "syn 1.0.109",
@@ -735,7 +735,7 @@ dependencies = [
 [[package]]
 name = "uniffi_core"
 version = "0.23.0"
-source = "git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4#a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4"
+source = "git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3#8441959e02b9d78df0c3ea53202e5e0474cbfc76"
 dependencies = [
  "anyhow",
  "bytes",
@@ -769,7 +769,7 @@ dependencies = [
 [[package]]
 name = "uniffi_macros"
 version = "0.23.0"
-source = "git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4#a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4"
+source = "git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3#8441959e02b9d78df0c3ea53202e5e0474cbfc76"
 dependencies = [
  "bincode",
  "camino",
@@ -780,8 +780,8 @@ dependencies = [
  "serde",
  "syn 1.0.109",
  "toml",
- "uniffi_build 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4)",
- "uniffi_meta 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4)",
+ "uniffi_build 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3)",
+ "uniffi_meta 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3)",
 ]
 
 [[package]]
@@ -798,11 +798,11 @@ dependencies = [
 [[package]]
 name = "uniffi_meta"
 version = "0.23.0"
-source = "git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4#a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4"
+source = "git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3#8441959e02b9d78df0c3ea53202e5e0474cbfc76"
 dependencies = [
  "serde",
  "siphasher",
- "uniffi_checksum_derive 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4)",
+ "uniffi_checksum_derive 0.23.0 (git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3)",
 ]
 
 [[package]]
@@ -823,7 +823,7 @@ dependencies = [
 [[package]]
 name = "uniffi_testing"
 version = "0.23.0"
-source = "git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4#a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4"
+source = "git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3#8441959e02b9d78df0c3ea53202e5e0474cbfc76"
 dependencies = [
  "anyhow",
  "camino",
@@ -858,7 +858,7 @@ dependencies = [
 [[package]]
 name = "weedle2"
 version = "4.0.0"
-source = "git+https://github.com/NordSecurity/uniffi-rs.git?rev=a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4#a4318f3b55a7ee2c12eb9f0fe1b5122d89323fc4"
+source = "git+https://github.com/NordSecurity/uniffi-rs.git?tag=v0.23.0-3#8441959e02b9d78df0c3ea53202e5e0474cbfc76"
 dependencies = [
  "nom",
 ]
