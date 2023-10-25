@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -euxo pipefail
 
 
 # Run compatibility tests for all generators
@@ -55,9 +55,10 @@ TMP_DIR="$ROOT_DIR/compatibility-test/tmp"
 # Build test library:
 function build_docker() {
     docker run --rm \
+        -v $HOME/.cargo/registry:/usr/local/cargo/registry \
         -v $ROOT_DIR:/workspace \
         -w /workspace \
-        rust:1.64.0-slim-bullseye \
+        rust:1.72-bullseye \
         $*
 }
 
@@ -81,13 +82,14 @@ function bindings_docker() {
         $*
 }
 
-UDL_FILE="src/coverall.udl"
-bindings_docker uniffi-bindgen generate $UDL_FILE --language python --out-dir "tmp/python"
-bindings_docker uniffi-bindgen generate $UDL_FILE --language kotlin --out-dir "tmp/kotlin"
-bindings_docker uniffi-bindgen generate $UDL_FILE --language swift --out-dir "tmp/swift"
-bindings_docker uniffi-bindgen-cs $UDL_FILE --out-dir "tmp/cs" --config="uniffi.toml"
-bindings_docker uniffi-bindgen-go $UDL_FILE --out-dir "tmp/go"
-
+LIBRARY="/workspace/target/debug/libuniffi_coverall.so"
+rm -rf compatibility-test/tmp
+bindings_docker uniffi-bindgen generate $LIBRARY --library --language python --out-dir "tmp/python"
+bindings_docker uniffi-bindgen generate $LIBRARY --library --language kotlin --out-dir "tmp/kotlin"
+bindings_docker uniffi-bindgen generate $LIBRARY --library --language swift --out-dir "tmp/swift"
+bindings_docker uniffi-bindgen-cs $LIBRARY --library --out-dir "tmp/cs"
+bindings_docker uniffi-bindgen-go $LIBRARY --library --out-dir "tmp/go"
+bindings_docker uniffi-bindgen-cpp $LIBRARY --library --out-dir "tmp/cpp"
 
 # Python tests:
 function python_docker() {
@@ -169,6 +171,19 @@ function go_docker() {
 cp $TESTS_DIR/go/* $TMP_DIR/go
 go_docker go test -v
 
+# C++ tests:
+function cpp_docker() {
+    docker run --rm \
+        -v $ROOT_DIR:/workspace \
+        -w /workspace/compatibility-test/tmp/cpp \
+        -e LD_LIBRARY_PATH=/workspace/target/debug \
+        gcc:10-bullseye \
+        $*
+}
+
+cp $TESTS_DIR/cpp/* $TMP_DIR/cpp
+cpp_docker g++ -std=c++20 test_coverall.cpp -o test_coverall
+cpp_docker ./test_coverall
 
 # Clean up:
 rm -rf $TMP_DIR
