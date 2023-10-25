@@ -33,14 +33,15 @@ each time one of the generators is updated e.g. because of the bug fix. The tabl
 shows which versions of each generator are inside the docker image.
 
 
-| Docker image           | uniffi-rs version | uniffi-bindgen-cs version | uniffi-bindgen-go version |
-|------------------------|-------------------|---------------------------|---------------------------|
-| v0.23.0-6              | v0.23.0-3 (FORK)  | v0.4.0+v0.23.0            | v0.1.5+v0.23.0            |
-| v0.23.0-5              | v0.23.0-3 (FORK)  | v0.4.0+v0.23.0            | v0.1.5+v0.23.0            |
-| v0.23.0-4              | v0.23.0 (FORK)    | v0.2.3+v0.23.0            | v0.1.3+v0.23.0            |
-| v0.23.0-3 (DO NOT USE) | v0.23.0 (FORK)    | v0.2.2+v0.23.0            | v0.1.0+v0.23.0            |
-| v0.23.0-2 (DO NOT USE) | v0.23.0           | v0.2.1+v0.23.0            | v0.1.0+v0.23.0            |
-| v0.23.0-1              | v0.23.0           | v0.2.1+v0.23.0            | not present               |
+| Docker image           | uniffi-rs version     | uniffi-bindgen-cs version | uniffi-bindgen-go version | uniffi-bindgen-cpp version |
+|------------------------|-----------------------|---------------------------|---------------------------|----------------------------|
+| v0.25.0-1              | **v0.25.0-1 (FORK)**  | **v0.7.0+v0.25.0**        | **v0.2.0+v0.25.0**        | **v0.1.0+v0.25.0**         |
+| v0.23.0-6              | v0.23.0-3 (FORK)      | v0.4.0+v0.23.0            | v0.1.5+v0.23.0            | not present                |
+| v0.23.0-5              | v0.23.0-3 (FORK)      | **v0.4.0+v0.23.0**        | **v0.1.5+v0.23.0**        | not present                |
+| v0.23.0-4              | v0.23.0 (FORK)        | **v0.2.3+v0.23.0**        | **v0.1.3+v0.23.0**        | not present                |
+| v0.23.0-3 (DO NOT USE) | v0.23.0 (FORK)        | **v0.2.2+v0.23.0**        | v0.1.0+v0.23.0            | not present                |
+| v0.23.0-2 (DO NOT USE) | v0.23.0               | v0.2.1+v0.23.0            | **v0.1.0+v0.23.0**        | not present                |
+| v0.23.0-1              | v0.23.0               | v0.2.1+v0.23.0            | not present               | not present                |
 
 ### v0.23.0-6
 

@@ -3,6 +3,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 using Xunit;
+using System.Collections.Generic;
+using System.Threading;
 using System;
 using uniffi.coverall;
 
@@ -16,7 +18,7 @@ public class TestCoverall {
         };
         closure();
         GC.Collect();
-        Thread.Sleep(1);
+        Thread.Sleep(10);
         Assert.Equal(0UL, CoverallMethods.GetNumAlive());
     }
 
@@ -70,7 +72,7 @@ public class TestCoverall {
             Assert.Throws<PanicException>(() => coveralls.FalliblePanic("Expected panic in a fallible function!"));
 
             coveralls.TakeOther(null);
-            Assert.Equal(2UL, coveralls.StrongCount());
+            Assert.Equal(2UL, coveralls.StrongCount());  
         }
 
         Assert.Equal(0UL, CoverallMethods.GetNumAlive());
@@ -124,7 +126,9 @@ public class TestCoverall {
                 () => coveralls.MaybeThrowComplex(2));
             Assert.Equal("Forbidden", permission_denied.reason);
 
-            Assert.Throws<PanicException>(() => coveralls.MaybeThrowComplex(3));
+            Assert.Throws<ComplexException.UnknownException>(() => coveralls.MaybeThrowComplex(3));
+
+            Assert.Throws<PanicException>(() => coveralls.MaybeThrowComplex(4));
         }
     }
 
@@ -142,17 +146,19 @@ public class TestCoverall {
         // Make sure that there is no blocking during concurrent FFI calls.
 
         using (var counter = new ThreadsafeCounter()) {
+            const int WAIT_MILLIS = 20;
+
             Thread blockingThread = new Thread(new ThreadStart(() => {
-                // block the thread for 100ms
-                counter.BusyWait(300);
+                counter.BusyWait(WAIT_MILLIS);
             }));
 
             var count = 0;
             Thread countingThread = new Thread(new ThreadStart(() => {
-                for (int i = 0; i < 100; i++) {
+                for (int i = 0; i < WAIT_MILLIS; i++) {
                     // `count` is only incremented if another thread is blocking the counter.
                     // This ensures that both calls are running concurrently.
                     count = counter.IncrementIfBusy();
+                    Thread.Sleep(1);
                 }
             }));
 
@@ -164,4 +170,10 @@ public class TestCoverall {
         }
     }
 
+    [Fact]
+    public void TestBytes() {
+        using (var coveralls = new Coveralls("test_bytes")) {
+            Assert.Equal(new byte[] { 3, 2, 1 }, coveralls.Reverse(new byte[] { 1, 2, 3}));
+        }
+    }
 }
