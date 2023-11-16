@@ -72,7 +72,7 @@ public class TestCoverall {
             Assert.Throws<PanicException>(() => coveralls.FalliblePanic("Expected panic in a fallible function!"));
 
             coveralls.TakeOther(null);
-            Assert.Equal(2UL, coveralls.StrongCount());  
+            Assert.Equal(2UL, coveralls.StrongCount());
         }
 
         Assert.Equal(0UL, CoverallMethods.GetNumAlive());
