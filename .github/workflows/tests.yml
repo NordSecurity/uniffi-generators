@@ -37,8 +37,8 @@ jobs:
         with:
           name: test-libs
           path: |
-            target/debug/libuniffi_coverall.so
-            target/debug/libuniffi_coverall.a
+            target/debug/libcompatibility_test.so
+            target/debug/libcompatibility_test.a
 
   test:
     runs-on: ubuntu-latest
