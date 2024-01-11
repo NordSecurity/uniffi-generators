@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
+SCRIPT_DIR="${SCRIPT_DIR:-$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )}"
 
 # Run compatibility tests for all generators
 # You can either run this script with -bd flags
@@ -57,7 +58,7 @@ set -x
 function build_docker() {
     docker run --rm \
         -v $HOME/.cargo/registry:/usr/local/cargo/registry \
-        -v $ROOT_DIR:/workspace \
+        -v $SCRIPT_DIR:/workspace \
         -w /workspace \
         rust:1.72-bullseye \
         $*
@@ -98,9 +99,7 @@ if [[ -z "$GENERATOR" || "$GENERATOR" = "go" ]]; then
 fi
 
 if [[ -z "$GENERATOR" || "$GENERATOR" = "cpp" ]]; then
-    :
-    # TODO currently does not work without creating a new release
-    # ./compatibility-test/test_cpp.sh
+    ./compatibility-test/test_cpp.sh
 fi
 
 echo Compatibility tests passed!

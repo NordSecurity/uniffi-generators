@@ -13,5 +13,13 @@ function cpp_docker() {
         $*
 }
 
-cpp_docker g++ -std=c++20 coverall/main.cpp -I. -Iinclude -o test_coverall
+COMPILE_CMD=(
+    g++ -o test_coverall
+    -std=c++20
+    -I. -Iinclude
+    -L /workspace/target/debug -lcompatibility_test -lpthread
+    coverall/main.cpp coverall.cpp
+)
+
+cpp_docker ${COMPILE_CMD[@]}
 cpp_docker ./test_coverall

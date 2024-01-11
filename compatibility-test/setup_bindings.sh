@@ -10,5 +10,5 @@ source "$SCRIPT_DIR/env.sh"
 docker run --rm \
     --volume $ROOT_DIR:/workspace \
     --workdir /workspace/compatibility-test \
-    ghcr.io/nordsecurity/uniffi-generators:v0.25.0-1 \
+    generators:test \
     /bin/bash /workspace/compatibility-test/setup_bindings_inner.sh
