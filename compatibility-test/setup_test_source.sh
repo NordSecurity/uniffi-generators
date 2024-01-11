@@ -1,9 +1,11 @@
 #!/bin/bash
 set -euo pipefail
-set +x
 
 SCRIPT_DIR="${SCRIPT_DIR:-$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )}"
 source "$SCRIPT_DIR/env.sh"
+
+# Disable logging commands to make the file download logs easy to read
+set +x
 
 # XD use docker to rm tmp directory as root. The tests run in Docker container, and create files
 # in tmp directory as root.
@@ -44,8 +46,7 @@ download_file "$GITHUB_URL/binding_tests/coverall_test.go" "$TMP_DIR/go"
 download_file "$GITHUB_URL/binding_tests/go.mod"           "$TMP_DIR/go"
 download_file "$GITHUB_URL/binding_tests/go.sum"           "$TMP_DIR/go"
 
-# TODO use tagged version
-GITHUB_VERSION="f47dc471643f9d079f2cab03df68adf6b6d3d0b3"
+GITHUB_VERSION="v0.2.2+v0.25.0"
 GITHUB_URL="https://raw.githubusercontent.com/NordSecurity/uniffi-bindgen-cpp/$GITHUB_VERSION"
 download_file "$GITHUB_URL/cpp-tests/tests/coverall/main.cpp"       "$TMP_DIR/cpp/coverall"
 download_file "$GITHUB_URL/cpp-tests/tests/include/test_common.hpp" "$TMP_DIR/cpp/include"
