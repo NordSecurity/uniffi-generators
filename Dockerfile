@@ -7,7 +7,7 @@ RUN cargo search --limit 1
 RUN cd /project && cargo install --path uniffi-bindgen
 RUN cargo install uniffi-bindgen-cs --tag v0.8.0+v0.25.0 --git https://github.com/NordSecurity/uniffi-bindgen-cs
 RUN cargo install uniffi-bindgen-go --tag v0.2.1+v0.25.0 --git https://github.com/NordSecurity/uniffi-bindgen-go
-RUN cargo install uniffi-bindgen-cpp --tag v0.4.2+v0.25.0 --git https://github.com/NordSecurity/uniffi-bindgen-cpp
+RUN cargo install uniffi-bindgen-cpp --tag v0.5.0+v0.25.0 --git https://github.com/NordSecurity/uniffi-bindgen-cpp
 
 FROM rust:1.74-bullseye
 COPY --from=builder /usr/local/cargo/bin/uniffi-bindgen /bin

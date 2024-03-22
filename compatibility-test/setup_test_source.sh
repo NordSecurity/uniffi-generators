@@ -46,7 +46,7 @@ download_file "$GITHUB_URL/binding_tests/coverall_test.go" "$TMP_DIR/go"
 download_file "$GITHUB_URL/binding_tests/go.mod"           "$TMP_DIR/go"
 download_file "$GITHUB_URL/binding_tests/go.sum"           "$TMP_DIR/go"
 
-GITHUB_VERSION="v0.4.2+v0.25.0"
+GITHUB_VERSION="v0.5.0+v0.25.0"
 GITHUB_URL="https://raw.githubusercontent.com/NordSecurity/uniffi-bindgen-cpp/$GITHUB_VERSION"
 download_file "$GITHUB_URL/cpp-tests/tests/coverall/main.cpp" "$TMP_DIR/cpp/coverall"
 download_file "$GITHUB_URL/cpp-tests/include/test_common.hpp" "$TMP_DIR/cpp/include"
