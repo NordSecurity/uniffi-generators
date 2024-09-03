@@ -5,7 +5,7 @@ COPY . /project
 RUN cargo search --limit 1
 
 RUN cd /project && cargo install --path uniffi-bindgen
-RUN cargo install uniffi-bindgen-cs --tag v0.8.1+v0.25.0 --git https://github.com/NordSecurity/uniffi-bindgen-cs
+RUN cargo install uniffi-bindgen-cs --tag v0.8.3+v0.25.0 --git https://github.com/NordSecurity/uniffi-bindgen-cs
 RUN cargo install uniffi-bindgen-go --tag v0.2.1+v0.25.0 --git https://github.com/NordSecurity/uniffi-bindgen-go
 RUN cargo install uniffi-bindgen-cpp --tag v0.6.1+v0.25.0 --git https://github.com/NordSecurity/uniffi-bindgen-cpp
 
