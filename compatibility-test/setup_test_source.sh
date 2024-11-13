@@ -40,7 +40,7 @@ download_file "$GITHUB_URL/dotnet-tests/UniffiCS.BindingTests/UniffiCS.BindingTe
 download_file "$GITHUB_URL/dotnet-tests/UniffiCS.BindingTests/Usings.cs"                       "$TMP_DIR/cs/UniffiCS.binding_tests"
 download_file "$GITHUB_URL/dotnet-tests/UniffiCS/UniffiCS.csproj"                              "$TMP_DIR/cs/UniffiCS"
 
-GITHUB_VERSION="v0.2.1+v0.25.0"
+GITHUB_VERSION="v0.2.2+v0.25.0"
 GITHUB_URL="https://raw.githubusercontent.com/NordSecurity/uniffi-bindgen-go/$GITHUB_VERSION"
 download_file "$GITHUB_URL/binding_tests/coverall_test.go" "$TMP_DIR/go"
 download_file "$GITHUB_URL/binding_tests/go.mod"           "$TMP_DIR/go"
