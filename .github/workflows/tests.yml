@@ -21,28 +21,9 @@ jobs:
           name: ${{ env.IMAGE_NAME }}
           path: ${{ env.IMAGE_PATH }}
 
-  build-test-libs:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
-      - uses: actions-rs/toolchain@b2417cde72dcf67f306c0ae8e0828a81bf0b189f
-        with:
-          toolchain: "1.78"
-          default: true
-      - uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
-        with:
-          command: build
-          args: --package compatibility-test
-      - uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
-        with:
-          name: test-libs
-          path: |
-            target/debug/libcompatibility_test.so
-            target/debug/libcompatibility_test.a
-
   test:
     runs-on: ubuntu-latest
-    needs: [build-docker, build-test-libs]
+    needs: [build-docker]
     steps:
     - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
     - uses: docker/setup-buildx-action@2a1a44ac4aa01993040736bd95bb470da1a38365
@@ -50,13 +31,9 @@ jobs:
       with:
         name: ${{ env.IMAGE_NAME }}
         path: /tmp
-    - uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16
-      with:
-        name: test-libs
-        path: target/debug
     - name: Load docker image
       run: |
         docker load --input ${{ env.IMAGE_PATH }}
     - name: Run tests
       run: |
-        sudo ./test_generators.sh
+        sudo ./test_generators.sh -b

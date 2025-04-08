@@ -27,26 +27,26 @@ download_file() {
     echo ""
 }
 
-GITHUB_VERSION="v0.25.0"
+GITHUB_VERSION="v0.28.3"
 GITHUB_URL="https://raw.githubusercontent.com/mozilla/uniffi-rs/$GITHUB_VERSION"
 download_file "$GITHUB_URL/fixtures/coverall/tests/bindings/test_coverall.kts"   "$TMP_DIR/kotlin"
 download_file "$GITHUB_URL/fixtures/coverall/tests/bindings/test_coverall.py"    "$TMP_DIR/python"
 download_file "$GITHUB_URL/fixtures/coverall/tests/bindings/test_coverall.swift" "$TMP_DIR/swift"
 
-GITHUB_VERSION="v0.8.3+v0.25.0"
+GITHUB_VERSION="v0.9.1+v0.28.3"
 GITHUB_URL="https://raw.githubusercontent.com/NordSecurity/uniffi-bindgen-cs/$GITHUB_VERSION"
 download_file "$GITHUB_URL/dotnet-tests/UniffiCS.BindingTests/TestCoverall.cs"                 "$TMP_DIR/cs/UniffiCS.binding_tests"
 download_file "$GITHUB_URL/dotnet-tests/UniffiCS.BindingTests/UniffiCS.BindingTests.csproj"    "$TMP_DIR/cs/UniffiCS.binding_tests"
 download_file "$GITHUB_URL/dotnet-tests/UniffiCS.BindingTests/Usings.cs"                       "$TMP_DIR/cs/UniffiCS.binding_tests"
 download_file "$GITHUB_URL/dotnet-tests/UniffiCS/UniffiCS.csproj"                              "$TMP_DIR/cs/UniffiCS"
 
-GITHUB_VERSION="v0.2.2+v0.25.0"
+GITHUB_VERSION="v0.3.0+v0.28.3"
 GITHUB_URL="https://raw.githubusercontent.com/NordSecurity/uniffi-bindgen-go/$GITHUB_VERSION"
 download_file "$GITHUB_URL/binding_tests/coverall_test.go" "$TMP_DIR/go"
 download_file "$GITHUB_URL/binding_tests/go.mod"           "$TMP_DIR/go"
 download_file "$GITHUB_URL/binding_tests/go.sum"           "$TMP_DIR/go"
 
-GITHUB_VERSION="v0.6.4+v0.25.0"
+GITHUB_VERSION="v0.7.0+v0.28.3"
 GITHUB_URL="https://raw.githubusercontent.com/NordSecurity/uniffi-bindgen-cpp/$GITHUB_VERSION"
 download_file "$GITHUB_URL/cpp-tests/tests/coverall/main.cpp" "$TMP_DIR/cpp/coverall"
 download_file "$GITHUB_URL/cpp-tests/include/test_common.hpp" "$TMP_DIR/cpp/include"

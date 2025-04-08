@@ -60,7 +60,7 @@ function build_docker() {
         -v $HOME/.cargo/registry:/usr/local/cargo/registry \
         -v $SCRIPT_DIR:/workspace \
         -w /workspace \
-        rust:1.72-bullseye \
+        rust:1.81-bullseye \
         $*
 }
 
