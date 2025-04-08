@@ -13,6 +13,6 @@ function kotlin_docker() {
         $*
 }
 
-curl -L "https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.7.0/jna-5.7.0.jar" -o $TMP_DIR/kotlin/jna.jar
+curl -L "https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar" -o $TMP_DIR/kotlin/jna.jar
 kotlin_docker kotlinc -Werror -d coverall.jar uniffi/coverall/coverall.kt -classpath ".:jna.jar"
 kotlin_docker kotlinc -Werror -classpath ".:jna.jar:coverall.jar" -J-ea -script test_coverall.kts

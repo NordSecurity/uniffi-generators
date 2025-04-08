@@ -11,7 +11,7 @@ function go_docker() {
         -e CGO_ENABLED=1 \
         -e CGO_LDFLAGS="-lcompatibility_test -L/workspace/target/debug -ldl -lm" \
         -e LD_LIBRARY_PATH=/workspace/target/debug \
-        golang:1.20 \
+        golang:1.24 \
         $*
 }
 
