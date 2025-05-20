@@ -1,4 +1,4 @@
-FROM rust:1.81-bullseye as builder
+FROM rust:1.85.0-bullseye as builder
 COPY . /project
 
 # Download crates.io index, saves time if subsequent steps change
@@ -9,7 +9,7 @@ RUN cargo install uniffi-bindgen-cs --tag v0.9.1+v0.28.3 --git https://github.co
 RUN cargo install uniffi-bindgen-go --tag v0.3.0+v0.28.3 --git https://github.com/NordSecurity/uniffi-bindgen-go
 RUN cargo install uniffi-bindgen-cpp --tag v0.7.0+v0.28.3 --git https://github.com/NordSecurity/uniffi-bindgen-cpp
 
-FROM rust:1.81-bullseye
+FROM rust:1.85.0-bullseye
 COPY --from=builder /usr/local/cargo/bin/uniffi-bindgen /bin
 COPY --from=builder /usr/local/cargo/bin/uniffi-bindgen-cs /bin
 COPY --from=builder /usr/local/cargo/bin/uniffi-bindgen-go /bin
