@@ -8,7 +8,7 @@ images with all these generators in their compatible versions.
 
 Start docker container with image from this repository e.g.:
 ```
-ghcr.io/NordSecurity/uniffi-generators:v0.28.3-1
+ghcr.io/NordSecurity/uniffi-generators:v0.28.3-3
 ```
 Inside docker you can run:
 ```
@@ -38,6 +38,7 @@ shows which versions of each generator are inside the docker image.
 
 | Docker image           | uniffi-rs version     | uniffi-bindgen-cs version | uniffi-bindgen-go version | uniffi-bindgen-cpp version |
 |------------------------|-----------------------|---------------------------|---------------------------|----------------------------|
+| v0.28.3-3              | v0.28.3               | v0.9.1+v0.28.3            | **v0.4.0+v0.28.3**        | **v0.7.2+v0.28.3**         |
 | v0.28.3-1              | **v0.28.3**           | **v0.9.1+v0.28.3**        | **v0.3.0+v0.28.3**        | **v0.7.0+v0.28.3**         |
 | v0.25.0-15             | v0.3.3+v0.25.0        | v0.8.3+v0.25.0            | v0.2.2+v0.25.0            | **v0.6.4+v0.25.0**         |
 | v0.25.0-14             | **v0.3.3+v0.25.0**    | v0.8.3+v0.25.0            | v0.2.2+v0.25.0            | v0.6.1+v0.25.0             |
@@ -69,16 +70,3 @@ Version changelogs are available inside each individual project.
 - [NordSecurity/uniffi-bindgen-cpp/CHANGELOG.md](https://github.com/NordSecurity/uniffi-bindgen-cpp/blob/main/CHANGELOG.md)
 - [NordSecurity/uniffi-bindgen-cs/CHANGELOG.md](https://github.com/NordSecurity/uniffi-bindgen-cs/blob/main/CHANGELOG.md)
 - [NordSecurity/uniffi-bindgen-go/CHANGELOG.md](https://github.com/NordSecurity/uniffi-bindgen-go/blob/main/CHANGELOG.md)
-
-### v0.28.3-1
-
-- Switched to uniffi-rs upstream
-- Updated to uniffi v0.28.3
-
-### v0.23.0-6
-
-- Include `python3` installation in the *docker* image
-
-### ~~v0.23.0-2~~, ~~v0.23.0-3~~
-
-These versions are not ABI compatible with upstream, and should not be used.
