@@ -33,7 +33,7 @@ download_file "$GITHUB_URL/fixtures/coverall/tests/bindings/test_coverall.kts"  
 download_file "$GITHUB_URL/fixtures/coverall/tests/bindings/test_coverall.py"    "$TMP_DIR/python"
 download_file "$GITHUB_URL/fixtures/coverall/tests/bindings/test_coverall.swift" "$TMP_DIR/swift"
 
-GITHUB_VERSION="v0.9.1+v0.28.3"
+GITHUB_VERSION="v0.9.2+v0.28.3"
 GITHUB_URL="https://raw.githubusercontent.com/NordSecurity/uniffi-bindgen-cs/$GITHUB_VERSION"
 download_file "$GITHUB_URL/dotnet-tests/UniffiCS.BindingTests/TestCoverall.cs"                 "$TMP_DIR/cs/UniffiCS.binding_tests"
 download_file "$GITHUB_URL/dotnet-tests/UniffiCS.BindingTests/UniffiCS.BindingTests.csproj"    "$TMP_DIR/cs/UniffiCS.binding_tests"
