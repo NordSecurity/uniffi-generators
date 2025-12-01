@@ -8,7 +8,7 @@ images with all these generators in their compatible versions.
 
 Start docker container with image from this repository e.g.:
 ```
-ghcr.io/NordSecurity/uniffi-generators:v0.28.3-4
+ghcr.io/NordSecurity/uniffi-generators:v0.30.0-1
 ```
 Inside docker you can run:
 ```
@@ -38,6 +38,7 @@ shows which versions of each generator are inside the docker image.
 
 | Docker image           | uniffi-rs version     | uniffi-bindgen-cs version | uniffi-bindgen-go version | uniffi-bindgen-cpp version |
 |------------------------|-----------------------|---------------------------|---------------------------|----------------------------|
+| v0.30.0-1              | **v0.30.0**           | **v0.11.0+v0.30.0**       | **v0.5.0+v0.30.0**        | **v0.8.0+v0.30.0**         |
 | v0.28.3-4              | v0.28.3               | **v0.9.2+v0.28.3**        | v0.4.0+v0.28.3            | v0.7.2+v0.28.3             |
 | v0.28.3-3              | v0.28.3               | v0.9.1+v0.28.3            | **v0.4.0+v0.28.3**        | **v0.7.2+v0.28.3**         |
 | v0.28.3-1              | **v0.28.3**           | **v0.9.1+v0.28.3**        | **v0.3.0+v0.28.3**        | **v0.7.0+v0.28.3**         |

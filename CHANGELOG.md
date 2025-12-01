@@ -1,3 +1,9 @@
+### v0.30.0-1
+- Bump uniffi-bindgen-go to v0.5.0+v0.30.0
+- Bump uniffi-bindgen-cpp to v0.8.0+v0.30.0
+- Bump uniffi-bindgen-cs to v0.11.0+v0.30.0
+- Bump uniffi-rs to v0.30.0
+
 ### v0.28.3-3
 - Bump uniffi-bindgen-go to v0.4.0+v0.28.3
 - Bump uniffi-bindgen-cpp to v0.7.2+v0.28.3

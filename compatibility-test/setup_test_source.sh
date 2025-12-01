@@ -27,7 +27,7 @@ download_file() {
     echo ""
 }
 
-GITHUB_VERSION="v0.28.3"
+GITHUB_VERSION="v0.30.0"
 GITHUB_URL="https://raw.githubusercontent.com/mozilla/uniffi-rs/$GITHUB_VERSION"
 download_file "$GITHUB_URL/fixtures/coverall/tests/bindings/test_coverall.kts"   "$TMP_DIR/kotlin"
 download_file "$GITHUB_URL/fixtures/coverall/tests/bindings/test_coverall.py"    "$TMP_DIR/python"
