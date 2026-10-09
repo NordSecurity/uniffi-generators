@@ -9,7 +9,7 @@ SCRIPT_DIR="${SCRIPT_DIR:-$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>
 # or you can build them manually and then run this script.
 # To build them manually you need to:
 # 1. Build test library in debug mode by running:
-#    cargo build --package compatibility-test
+#    cargo build --package compatibility-test --package compatibility-test-cpp
 #    in the root of this repo
 # 2. Build the docker image with generators by running:
 #    docker build -t generators:test .
@@ -60,12 +60,12 @@ function build_docker() {
         -v $HOME/.cargo/registry:/usr/local/cargo/registry \
         -v $SCRIPT_DIR:/workspace \
         -w /workspace \
-        rust:1.81-bullseye \
+        rust:1.90.0-bullseye \
         $*
 }
 
 if [ $BUILD_LIBS -eq 1 ]; then
-    build_docker cargo build --package compatibility-test
+    build_docker cargo build --package compatibility-test --package compatibility-test-cpp
 fi
 
 

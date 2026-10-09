@@ -17,7 +17,7 @@ COMPILE_CMD=(
     g++ -o test_coverall
     -std=c++20
     -I. -Iinclude
-    -L /workspace/target/debug -lcompatibility_test -lpthread
+    -L /workspace/target/debug -lcompatibility_test_cpp -lpthread
     coverall/main.cpp coverall.cpp
 )
 

@@ -9,7 +9,7 @@ function swift_docker() {
         -v $ROOT_DIR:/workspace \
         -w /workspace/compatibility-test/tmp/swift \
         -e LD_LIBRARY_PATH=/workspace/target/debug \
-        swift:5.7 \
+        swift:6.0.3 \
         $*
 }
 

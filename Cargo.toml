@@ -3,5 +3,6 @@ resolver = "2"
 
 members = [
     "uniffi-bindgen",
-    "compatibility-test"
+    "compatibility-test",
+    "compatibility-test-cpp"
 ]

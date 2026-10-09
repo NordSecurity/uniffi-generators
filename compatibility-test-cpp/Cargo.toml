@@ -1,0 +1,17 @@
+[package]
+name = "compatibility-test-cpp"
+version = "0.31.0"
+edition = "2021"
+license = "MPL-2.0"
+publish = false
+
+# Test library for the C++ generator only. Since uniffi-rs v0.30.0 the upstream coverall fixture
+# exports an `async fn`, which uniffi-bindgen-cpp refuses to generate. uniffi-bindgen-cpp keeps its
+# own copy of the fixture without it, so use that copy here. Keep the tag in sync with the
+# uniffi-bindgen-cpp version in the Dockerfile, and drop this crate once C++ supports async.
+[lib]
+crate-type = ["cdylib"]
+name = "compatibility_test_cpp"
+
+[dependencies]
+uniffi-fixture-coverall = { git = "https://github.com/NordSecurity/uniffi-bindgen-cpp.git", tag = "v0.10.0+v0.31.0" }
