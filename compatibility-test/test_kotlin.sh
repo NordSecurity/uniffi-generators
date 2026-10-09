@@ -14,5 +14,6 @@ function kotlin_docker() {
 }
 
 curl -L "https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar" -o $TMP_DIR/kotlin/jna.jar
-kotlin_docker kotlinc -Werror -d coverall.jar uniffi/coverall/coverall.kt -classpath ".:jna.jar"
-kotlin_docker kotlinc -Werror -classpath ".:jna.jar:coverall.jar" -J-ea -script test_coverall.kts
+curl -L "https://repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.6.4/kotlinx-coroutines-core-jvm-1.6.4.jar" -o $TMP_DIR/kotlin/kotlinx-coroutines.jar
+kotlin_docker kotlinc -Werror -d coverall.jar uniffi/coverall/coverall.kt -classpath ".:jna.jar:kotlinx-coroutines.jar"
+kotlin_docker kotlinc -Werror -classpath ".:jna.jar:kotlinx-coroutines.jar:coverall.jar" -J-ea -script test_coverall.kts

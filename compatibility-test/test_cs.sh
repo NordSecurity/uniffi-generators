@@ -10,8 +10,10 @@ function cs_docker() {
         -w /workspace/compatibility-test/tmp/cs/UniffiCS.binding_tests \
         -e LD_LIBRARY_PATH=/workspace/target/debug \
         -e SKIP_FIXTURE_COPY=true \
-        mcr.microsoft.com/dotnet/sdk:6.0 \
+        mcr.microsoft.com/dotnet/sdk:9.0 \
         $*
 }
 
-cs_docker dotnet test -l "console;verbosity=normal"
+# Without TestingPlatformDotnetTestSupport, `dotnet test` on the .NET9 SDK
+# builds the project without running any tests.
+cs_docker dotnet test -p:TestingPlatformDotnetTestSupport=true -p:TestingPlatformShowTestsFailure=true

@@ -1,0 +1,1 @@
+use uniffi_coverall::*;
